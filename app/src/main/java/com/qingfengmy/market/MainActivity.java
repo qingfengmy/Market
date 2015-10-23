@@ -11,6 +11,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -107,7 +109,39 @@ public class MainActivity extends AppCompatActivity {
             return "优亿市场";
         }else if (name.contains("cn.goapk")){
             return "安智市场";
+        }else if (name.contains("com.android")){
+            return "google android market";
         }
         return name;
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_1) {
+            editText.setText("");
+            return true;
+        }else if (id == R.id.action_2){
+            editText.setText("");
+            return true;
+        }else if (id == R.id.action_3){
+            editText.setText("");
+            return true;
+        }else if (id == R.id.action_4){
+            editText.setText("");
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
 }
